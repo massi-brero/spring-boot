@@ -23,7 +23,6 @@ public class Training {
 
 	public Training(String title, String description, int pointsNeeded) {
 		super();
-		this.id = id;
 		this.title = title;
 		this.description = description;
 		this.pointsNeeded = pointsNeeded;

@@ -24,9 +24,7 @@ public class TrainingsadminApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Training training = trainingRepo.findbyId(10001L);
-		
-		logger.info("Trainingsinfo {}", training);
+		trainingRepo.playWthEm();
 	}
 
 }
