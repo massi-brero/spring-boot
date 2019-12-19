@@ -1,0 +1,14 @@
+package de.massisoft.trainingsadmin.repository;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class TrainingRepositoryTest {
+
+	@Test
+	void test() {
+		fail("Not yet implemented");
+	}
+
+}

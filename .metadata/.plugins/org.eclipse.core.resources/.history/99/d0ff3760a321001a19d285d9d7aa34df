@@ -1,0 +1,13 @@
+package de.massisoft.trainingsadmin.repository;
+
+import javax.persistence.EntityManager;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class TrainingRepository {
+	
+	@Autowired
+	EntityManager em;
+	
+	
+}	

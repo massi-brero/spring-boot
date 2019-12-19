@@ -1,0 +1,21 @@
+package de.massisoft.trainingsadmin.repository;
+
+import javax.persistence.EntityManager;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import de.massisoft.trainingsadmin.entities.Training;
+
+public class TrainingRepository {
+	
+	@Autowired
+	EntityManager em;
+	
+	public Training findbyId(Long id) {
+		em.find(Training.class, id);
+	}
+	
+	
+	
+}	
+ 

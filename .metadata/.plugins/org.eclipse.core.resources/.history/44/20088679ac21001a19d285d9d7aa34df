@@ -1,0 +1,17 @@
+spring:
+  h2:
+    console:
+      enabled: true
+      
+  jpa:  
+    properties: 
+      hibernate:
+        generate_statistics: true
+        format_sql: true
+    show-sql: true
+    
+logging:
+  level:
+    org.hibernate:
+        stat: debug
+        type: trace

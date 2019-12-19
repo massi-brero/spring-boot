@@ -1,0 +1,5 @@
+package de.massisoft.trainingsadmin.repository;
+
+public class TrainingRepository {
+
+}

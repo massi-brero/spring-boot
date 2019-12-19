@@ -1,0 +1,1 @@
+insert into training (id, title, description, points_needed) values (10001, 'First training', 'the first one', 10);

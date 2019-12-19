@@ -1,0 +1,1 @@
+insert into training values (NULL, 'First training', 'the first one', 10);

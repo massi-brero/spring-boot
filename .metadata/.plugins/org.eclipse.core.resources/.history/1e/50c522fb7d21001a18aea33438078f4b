@@ -1,0 +1,32 @@
+spring:
+  profiles:
+    active: dev
+    
+---
+spring:
+  profiles: dev
+  datasource: 
+    url: jdbc:mysql://127.0.0.1:8889/ms_dash
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate.ddl-auto: update
+    #hibernate.dialect: org.hibernate.dialect.MySQL55Dialect
+    show-sql: true
+    
+  management.endpoints.web.exposure.include: "*
+
+logging:
+  level:
+    org: DEBUG
+    
+server:   
+  port: 9090
+
+---
+spring:
+  profiles: prod
+    
+server:   
+  port: 80

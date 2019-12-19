@@ -1,0 +1,13 @@
+package de.massisoft.trainingsadmin;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class TrainingsadminApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(TrainingsadminApplication.class, args);
+	}
+
+}

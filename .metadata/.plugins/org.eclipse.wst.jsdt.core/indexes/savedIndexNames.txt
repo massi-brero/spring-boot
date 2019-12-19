@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+/Users/brero/code/spring/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+199068685.index
+1576767871.index
+765480338.index
+2206947523.index
+881259095.index
+2782726510.index
+3449800053.index

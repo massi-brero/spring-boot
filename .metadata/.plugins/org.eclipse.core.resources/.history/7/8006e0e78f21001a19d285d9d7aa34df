@@ -1,0 +1,6 @@
+package de.massisoft.trainingsadmin.entities;
+
+@Entity
+public class Training {
+	
+}
