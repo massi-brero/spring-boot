@@ -27,6 +27,11 @@ public class TrainingRepository {
         em.remove(findbyId(id));
     }
 
+    /**
+     * Doing save stuff.
+     * @param training
+     * @return
+     */
     public Training save(Training training) {
         if (training.getId() == null) {
             em.persist(training);
@@ -36,6 +41,7 @@ public class TrainingRepository {
 
         return training;
     }
+    
 
     public void playWithEm() {
 
