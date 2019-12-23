@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="JPQLTest" project="trainingsadmin" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="de.massisoft.trainingsadmin.repository.JPQLTest" time="0.307" displayname="JPQLTest" uniqueid="[engine:junit-jupiter]/[class:de.massisoft.trainingsadmin.repository.JPQLTest]">
+    <testcase name="test_findById" classname="de.massisoft.trainingsadmin.repository.JPQLTest" time="0.289" displayname="test_findById()" uniqueid="[engine:junit-jupiter]/[class:de.massisoft.trainingsadmin.repository.JPQLTest]/[method:test_findById()]"/>
+    <testcase name="test_findAll_typed" classname="de.massisoft.trainingsadmin.repository.JPQLTest" time="0.008" displayname="test_findAll_typed()" uniqueid="[engine:junit-jupiter]/[class:de.massisoft.trainingsadmin.repository.JPQLTest]/[method:test_findAll_typed()]"/>
+    <testcase name="test_findAll_not_typed" classname="de.massisoft.trainingsadmin.repository.JPQLTest" time="0.01" displayname="test_findAll_not_typed()" uniqueid="[engine:junit-jupiter]/[class:de.massisoft.trainingsadmin.repository.JPQLTest]/[method:test_findAll_not_typed()]"/>
+  </testsuite>
+</testrun>

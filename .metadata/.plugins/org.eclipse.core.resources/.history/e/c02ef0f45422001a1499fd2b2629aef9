@@ -1,0 +1,62 @@
+package de.massisoft.trainingsadmin.repository;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.DirtiesContext;
+
+import de.massisoft.trainingsadmin.TrainingsadminApplication;
+import de.massisoft.trainingsadmin.entities.Training;
+
+@SpringBootTest(classes = TrainingsadminApplication.class)
+class TrainingRepositoryTest {
+	
+	@Autowired
+	TrainingRepository repo;
+	
+	@Test
+	void test_findById() {
+		String expected = "First training";
+		
+		Training tr = repo.findbyId(10001L);
+		
+		assertEquals(expected, tr.getTitle());
+	}
+	
+	@Test
+	@DirtiesContext
+	void test_deleteById() {
+		repo.deletebyId(10001L);
+		
+		assertNull(repo.findbyId(10001L));
+	}
+	
+	@Test
+	@DirtiesContext
+	void test_save_new_entity() {
+		Training training = new Training("Some training", "a sescription", 10);
+		training = repo.save(training);
+		
+		assertNotNull(training.getId());
+	}
+	
+	@Test
+	@DirtiesContext
+	void test_update_entity() {
+		String expected = "New Title";
+		Training training = repo.findbyId(10001L);
+		training.setTitle(expected);
+		
+		assertEquals(expected, training.getTitle());
+	}
+	
+	@Test
+	@DirtiesContext
+	void test_playWithEm() {
+		repo.playWthEm();
+	}
+}

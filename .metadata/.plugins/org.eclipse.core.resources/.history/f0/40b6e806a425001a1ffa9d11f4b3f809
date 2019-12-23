@@ -1,0 +1,24 @@
+package de.massisoft.trainingsadmin.entities;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import javax.persistence.EntityManager;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+class TrainingTest {
+	
+    @Autowired
+    EntityManager em;
+
+	@Test
+	void  throws_error_when_title_is_null() {
+		Training training = new Training("Some training", "a sescription", 10);
+		training.setTitle(null);
+		
+		em.persist(training);	
+		em.flush();
+	}
+
+}

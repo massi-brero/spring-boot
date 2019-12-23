@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="JPQLTest.test_findAll" project="trainingsadmin" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="de.massisoft.trainingsadmin.repository.JPQLTest" time="0.306" displayname="JPQLTest" uniqueid="[engine:junit-jupiter]/[class:de.massisoft.trainingsadmin.repository.JPQLTest]">
+    <testcase name="test_findAll" classname="de.massisoft.trainingsadmin.repository.JPQLTest" time="0.306" displayname="test_findAll()" uniqueid="[engine:junit-jupiter]/[class:de.massisoft.trainingsadmin.repository.JPQLTest]/[method:test_findAll()]"/>
+  </testsuite>
+</testrun>

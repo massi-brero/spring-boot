@@ -24,7 +24,7 @@ public class TrainingsadminApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		trainingRepo.playWthEm();
+//		trainingRepo.playWithEm();
 	}
 
 }

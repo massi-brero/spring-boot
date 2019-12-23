@@ -1,0 +1,47 @@
+package de.massisoft.trainingsadmin.repository;
+
+import de.massisoft.trainingsadmin.TrainingsadminApplication;
+import de.massisoft.trainingsadmin.entities.Training;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.DirtiesContext;
+
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+@SpringBootTest(classes = TrainingsadminApplication.class)
+class JPQLTest {
+	
+	@Autowired
+	EntityManager em;
+	
+	@Test
+	void test_findAll_not_typed() {
+		List<?> l = em.createQuery("select t from Training t").getResultList();
+
+		assertEquals(3, l.size());
+	}
+	
+	@Test
+	void test_findAll_typed() {
+		TypedQuery<Training> query = em.createQuery("select t from Training t", Training.class);
+		List<Training> l = query.getResultList();
+
+		assertEquals(3, l.size());
+	}
+	
+	@Test
+	void test_findById() {
+		TypedQuery<Training> query = em.createQuery("select t from Training t where id = 2", Training.class);
+		List<Training> l = query.getResultList();
+		
+		assertEquals(1, l.size());
+	}
+
+
+}

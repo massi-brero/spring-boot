@@ -1,0 +1,38 @@
+package de.massisoft.trainingsadmin.repository;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import de.massisoft.trainingsadmin.TrainingsadminApplication;
+import de.massisoft.trainingsadmin.entities.Training;
+
+@SpringBootTest(classes = TrainingsadminApplication.class)
+class TrainingRepositoryTest {
+
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
+	
+	@Autowired
+	TrainingRepository repo;
+	
+	@Test
+	void test_findById() {
+		String expected = "First training";
+		
+		Training tr = repo.findbyId(10001L);
+		
+		assertEquals(expected, tr.getTitle());
+	}
+	
+	@Test
+	void test_deleteById() {
+		Training tr = repo.delete(10001L);
+		
+		assertNull(repo.findbyId(10001L));
+	}
+
+}

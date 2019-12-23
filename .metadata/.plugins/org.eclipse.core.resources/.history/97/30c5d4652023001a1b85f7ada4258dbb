@@ -1,0 +1,39 @@
+package de.massisoft.dashboard2.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import de.massisoft.dashboard2.services.CategoryService;
+import de.massisoft.dashboard2.services.EmployeeService;
+import de.massisoft.dashboard2.services.OrderService;
+import de.massisoft.dashboard2.services.RevenueService;
+
+@Controller
+public class FrontendController {
+
+    @Autowired
+    private RevenueService revenueService;
+    
+    @Autowired 
+    private EmployeeService employeeService;
+    
+    @Autowired
+    private CategoryService categoryService;
+    
+    @Autowired
+    private OrderService orderService;
+    
+    @GetMapping(value = "/dashboard")
+    public String getDashDetails(Model model) {
+        model.addAttribute("c", revenueService.getAllRevenues());
+        model.addAttribute("ei", employeeService.getAllEmployees());
+        model.addAttribute("categoryLabels", categoryService.getAllLabels());
+        model.addAttribute("categoryPercentages", categoryService.getAllPercentages());
+        model.addAttribute("orderReceivedValues", orderService.getOrderReceivedValues());
+        model.addAttribute("orderReceivedDates", orderService.getOrderReceivedDates());
+        return "dashboard";
+    }
+    
+}

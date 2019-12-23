@@ -33,6 +33,9 @@
     <fullyQualifiedTypeName name="org.springframework.boot.test.context.SpringBootTest"/>
     <fullyQualifiedTypeName name="de.massisoft.trainingsadmin.TrainingsadminApplication"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="javax.transaction.Transactional"/>
+    <fullyQualifiedTypeName name="org.springframework.test.annotation.DirtiesContext"/>
     <fullyQualifiedTypeName name="de.massisoft.trainingsadmin.repository.TrainingRepository"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="de.massisoft.trainingsadmin.entities.Training"/>
 </qualifiedTypeNameHistroy>

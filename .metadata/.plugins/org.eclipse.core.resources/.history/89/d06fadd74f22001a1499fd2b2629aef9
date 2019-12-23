@@ -1,0 +1,32 @@
+package de.massisoft.trainingsadmin.repository;
+
+import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import de.massisoft.trainingsadmin.entities.Training;
+
+@Repository
+@Transactional
+public class TrainingRepository {
+
+	@Autowired
+	EntityManager em;
+
+	public Training findbyId(Long id) {
+		return em.find(Training.class, id);
+	}
+
+	public void deletebyId(Long id) {
+		em.remove(findbyId(id));
+	}
+	
+	public void save(Training training) {
+		if (training.getId() == null) {
+			
+		}
+	}
+
+}

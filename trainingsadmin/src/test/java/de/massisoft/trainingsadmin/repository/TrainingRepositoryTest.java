@@ -57,6 +57,6 @@ class TrainingRepositoryTest {
 	@Test
 	//@DirtiesContext
 	void test_playWithEm() {
-		repo.playWthEm();
+		repo.playWithEm();
 	}
 }

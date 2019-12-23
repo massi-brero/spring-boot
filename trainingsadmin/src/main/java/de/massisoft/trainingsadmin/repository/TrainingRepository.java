@@ -13,46 +13,46 @@ import de.massisoft.trainingsadmin.entities.Training;
 @Repository
 @Transactional
 public class TrainingRepository {
-	
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	@Autowired
-	EntityManager em;
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	public Training findbyId(Long id) {
-		return em.find(Training.class, id);
-	}
+    @Autowired
+    EntityManager em;
 
-	public void deletebyId(Long id) {
-		em.remove(findbyId(id));
-	}
-	
-	public Training save(Training training) {
-		if (training.getId() == null) {
-			em.persist(training);
-		} else {
-			em.merge(training);
-		}
-		
-		return training;
-	}
-	
-	public void playWthEm() {
-		
-		logger.info("############ play with entity manager -- start ############");
-		Training tr1 = new Training("Training 1", "dsdsds", 10);
-		em.persist(tr1);
-		Training tr2 = new Training("Training 2", "dsdsds", 10);
-		em.persist(tr2);
-		em.flush();
-		
-		tr2.setTitle("New title f. Training 2");
-		tr1.setTitle("New title f. Training 1");
-		
-		em.refresh(tr1);
-		
-		em.flush();
+    public Training findbyId(Long id) {
+        return em.find(Training.class, id);
+    }
 
-	}
+    public void deletebyId(Long id) {
+        em.remove(findbyId(id));
+    }
+
+    public Training save(Training training) {
+        if (training.getId() == null) {
+            em.persist(training);
+        } else {
+            em.merge(training);
+        }
+
+        return training;
+    }
+
+    public void playWithEm() {
+
+        logger.info("############ play with entity manager -- start ############");
+        Training tr1 = new Training("Training 1", "dsdsds", 10);
+        em.persist(tr1);
+        Training tr2 = new Training("Training 2", "dsdsds", 10);
+        em.persist(tr2);
+        em.flush();
+
+        tr2.setTitle("New title f. Training 2");
+        tr1.setTitle("New title f. Training 1");
+
+        em.refresh(tr1);
+
+        em.flush();
+
+    }
 
 }
