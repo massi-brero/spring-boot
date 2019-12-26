@@ -26,7 +26,8 @@ public class TrainingRepository {
     public void deletebyId(Long id) {
         em.remove(findbyId(id));
     }
-
+    
+    
     /**
      * Doing save stuff.
      * @param training
