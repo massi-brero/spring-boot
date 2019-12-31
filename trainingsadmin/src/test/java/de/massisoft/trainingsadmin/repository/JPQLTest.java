@@ -29,7 +29,7 @@ class JPQLTest {
 	
 	@Test
 	void test_findAll_typed() {
-		TypedQuery<Training> query = em.createQuery("select t from Training t", Training.class);
+		TypedQuery<Training> query = em.createNamedQuery("query_get_all_trainings", Training.class);
 		List<Training> l = query.getResultList();
 
 		assertEquals(3, l.size());
@@ -37,7 +37,7 @@ class JPQLTest {
 	
 	@Test
 	void test_findById() {
-		TypedQuery<Training> query = em.createQuery("select t from Training t where id = 10002", Training.class);
+		TypedQuery<Training> query = em.createNamedQuery("query_get_first_training", Training.class);
 		List<Training> l = query.getResultList();
 		
 		assertEquals(1, l.size());

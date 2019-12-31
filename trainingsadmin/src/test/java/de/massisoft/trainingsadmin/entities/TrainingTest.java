@@ -1,14 +1,12 @@
 package de.massisoft.trainingsadmin.entities;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceException;
 import javax.transaction.Transactional;
-import javax.validation.ConstraintViolationException;
 
-import org.h2.jdbc.JdbcException;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -33,5 +31,27 @@ class TrainingTest {
 		});
 
 	}
+	
+	@Test
+    @Transactional
+    void check_created_date_was_inserted () {
+	    Training training = new Training("Some training", "a sescription", 10);
+	    em.persist(training);
+        em.flush();
+        
+        Training actualTraining = em.find(Training.class, training.getId());
+	    assertNotNull(actualTraining.getUpdated());
+	}
+	
+	@Test
+    @Transactional
+    void check_updated_date_was_inserted () {
+        Training training = new Training("Some training", "a sescription", 10);
+        em.persist(training);
+        em.flush();
+        
+        Training actualTraining = em.find(Training.class, training.getId());
+        assertNotNull(actualTraining.getCreated());
+    }
 
 }

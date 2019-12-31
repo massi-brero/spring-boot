@@ -1,12 +1,26 @@
 package de.massisoft.trainingsadmin.entities;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 @Entity
+@NamedQueries(
+        value = {
+                @NamedQuery(name="query_get_all_trainings", query="select t from Training t"),
+                @NamedQuery(name="query_get_first_training", query="select t from Training t where id = 10002")
+        }
+        
+)
 @Table(name="training")
 public class Training {
 	
@@ -21,6 +35,12 @@ public class Training {
 	
 	@Column(name="points_needed")
 	private int pointsNeeded;
+	
+	@UpdateTimestamp
+	private LocalDateTime updated;
+	
+	@CreationTimestamp
+	private LocalDateTime created;
 	
 	protected Training() {}
 
@@ -58,8 +78,25 @@ public class Training {
 	public void setPointsNeeded(int pointsNeeded) {
 		this.pointsNeeded = pointsNeeded;
 	}
+	
 
-	@Override
+	public LocalDateTime getUpdated() {
+        return updated;
+    }
+
+    public void setUpdated(LocalDateTime updated) {
+        this.updated = updated;
+    }
+
+    public LocalDateTime getCreated() {
+        return created;
+    }
+
+    public void setCreated(LocalDateTime created) {
+        this.created = created;
+    }
+
+    @Override
 	public String toString() {
 		return "Training [id=" + id + ", title=" + title + ", description=" + description + ", pointsNeeded="
 				+ pointsNeeded + "]";
