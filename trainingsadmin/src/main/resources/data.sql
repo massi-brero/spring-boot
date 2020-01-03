@@ -28,11 +28,11 @@ insert into student (id, firstname, lastname, passport_id)
 values (20003, 'Susan', 'Sharp', 40003);
 
 
-insert into review (id, rating, description)
-values (50001, '5', 'Great Course');
+insert into review (id, rating, description, training_id)
+values (50001, '5', 'Great Course', 10001);
 
-insert into review (id, rating, description)
-values (50002, '4', 'Nice One');
+insert into review (id, rating, description, training_id)
+values (50002, '4', 'Nice One', 10001);
 
-insert into review (id, rating, description)
-values (50003, '5', 'Liked it...');
+insert into review (id, rating, description, training_id)
+values (50003, '5', 'Liked it...', 10003);

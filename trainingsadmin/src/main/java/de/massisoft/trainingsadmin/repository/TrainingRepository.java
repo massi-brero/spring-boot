@@ -1,5 +1,8 @@
 package de.massisoft.trainingsadmin.repository;
 
+import java.util.Iterator;
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 
@@ -8,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import de.massisoft.trainingsadmin.entities.Review;
 import de.massisoft.trainingsadmin.entities.Training;
 
 @Repository
@@ -59,7 +63,17 @@ public class TrainingRepository {
         em.refresh(tr1);
 
         em.flush();
-
+    }
+    
+    public void addReview(Long trainingId, List<Review> reviews) {
+        Training training = findbyId(trainingId);
+        
+        for (Review review : reviews) {
+            training.addReview(review);
+            review.setTraining(training);
+            
+            em.persist(review);
+        }
     }
 
 }
