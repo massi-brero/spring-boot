@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import de.massisoft.trainingsadmin.entities.Review;
+import de.massisoft.trainingsadmin.entities.Student;
 import de.massisoft.trainingsadmin.entities.Training;
 
 @Repository
@@ -74,6 +75,19 @@ public class TrainingRepository {
             
             em.persist(review);
         }
+    }
+
+    public Training saveTrainingWithStudent(Long trainingId, Student student) {
+        Training training = findbyId(trainingId);
+        
+        student.addTraining(training);
+        training.addStudent(student);
+        
+        em.persist(student);
+        em.persist(training);
+        
+        return training;
+        
     }
 
 }

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import de.massisoft.trainingsadmin.entities.Student;
+import de.massisoft.trainingsadmin.entities.Training;
 
 @Repository
 @Transactional
@@ -54,6 +55,18 @@ public class StudentRepository {
        
         return student;
 
+    }
+    
+    public Student saveStudentWithTraining(Long studentId, Training training) {
+        Student student = findbyId(studentId);
+        
+        student.addTraining(training);
+        training.addStudent(student);
+        
+        em.persist(student);
+        em.persist(training);
+        
+        return student;
     }
 
 }

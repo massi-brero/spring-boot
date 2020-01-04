@@ -17,7 +17,7 @@ values (40002, 'E6565474');
 insert into passport (id, id_number)
 values (40003, 'E986453');
 
-
+ 
 insert into student (id, firstname, lastname, passport_id)
 values (20001, 'Massi', 'Brero', 40001);
 
@@ -36,3 +36,16 @@ values (50002, '4', 'Nice One', 10001);
 
 insert into review (id, rating, description, training_id)
 values (50003, '5', 'Liked it...', 10003);
+
+
+insert into student_training (student_id, training_id)
+values (20001, 10001);
+
+insert into student_training (student_id, training_id)
+values (20002, 10001);
+
+insert into student_training (student_id, training_id)
+values (20003, 10001);
+
+insert into student_training (student_id, training_id)
+values (20001, 10003);
