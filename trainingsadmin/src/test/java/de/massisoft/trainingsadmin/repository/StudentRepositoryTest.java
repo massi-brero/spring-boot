@@ -54,6 +54,17 @@ class StudentRepositoryTest {
     
     @Test
     @Transactional
+    void retrieve_student_with_review() {
+        Long expected = 50001L;
+        Student student = em.find(Student.class, 20001L);
+
+        assertThat(student.getReviews()).hasSize(2);
+        assertEquals(expected, student.getReviews().get(0).getId());
+
+    }
+    
+    @Test
+    @Transactional
     void retrieve_student_with_trainings_details() {
         int expected = 2;
         Student student = em.find(Student.class, 20001L);

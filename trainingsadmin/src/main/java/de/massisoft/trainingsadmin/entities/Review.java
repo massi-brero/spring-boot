@@ -23,6 +23,9 @@ public class Review {
     
     @ManyToOne
     private Training training;
+    
+    @ManyToOne
+    private Student student;
 
     public Review() {}
 
@@ -58,6 +61,22 @@ public class Review {
 
     public void setTraining(Training training) {
         this.training = training;
+    }
+    
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
     }
 
     @Override
