@@ -1,0 +1,23 @@
+spring:
+  profiles:
+    active: "dev"
+
+---
+spring:
+  profiles: dev
+server:
+  port: 8080
+logging:
+  level:
+    root: INFO
+
+---
+spring:
+  profiles: prod
+server:
+  port: 8888
+logging:
+  level:
+    root: WARN
+  file:
+    name: application.log
