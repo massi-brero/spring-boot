@@ -1,18 +1,21 @@
 package com.example.copsboot.repositories;
 
-import com.example.copsboot.entities.User;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.not;
+import static org.hamcrest.Matchers.nullValue;
+
+import java.util.HashSet;
+import java.util.UUID;
+
+import com.example.copsboot.entities.user.User;
 import com.example.copsboot.enumTypes.UserRole;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
-
-
-import java.util.HashSet;
-import java.util.UUID;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
