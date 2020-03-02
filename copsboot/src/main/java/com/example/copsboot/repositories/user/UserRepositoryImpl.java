@@ -8,7 +8,7 @@ import com.example.copsboot.orm.jpa.UniqueIdGenerator;
 /**
  * UserRepositoryImpl
  */
-public class UserRepositoryImpl implements UserRepository {
+public class UserRepositoryImpl implements UserRepositoryCustom {
     private final UniqueIdGenerator<UUID> generator;
 
     private UserRepositoryImpl(UniqueIdGenerator<UUID> generator) {
